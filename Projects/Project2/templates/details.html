@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}   
+    <div class="container-fluid">
+      <div class="container my-5">
+        {% if allTodo|length == 0 %}
+          <h1>No Record Found.</h1>
+        {% else %}
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Created AT</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+        
+              {% for todo in allTodo %}
+                <tr>
+                  <th scope="row">{{loop.index}}</th>
+                  <td>{{todo.title}}</td>
+                  <td>{{todo.excerpt}}</td>
+                  <td>{{todo.date_created }}</td>
+                  <td><a href="edit/{{todo.sno}}"><button type="button" class="btn btn-dark btn-sm">edit</button></a></td>
+                  <td><a href="delete/{{todo.sno}}"><button type="button" class="btn btn-dark btn-sm">delete</button></a></td>
+                </tr>
+              {% endfor %}
+              {% endif %}
+                
+              </tbody>
+            </table>
+      </div>
+
+    </div>
+ 
+    {% endblock %}

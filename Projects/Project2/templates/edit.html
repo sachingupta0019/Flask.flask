@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p class="alert alert-danger text-center">Update Task</p>
+    <div class="container">
+            <form action="/edit/{{allTodo.sno}}" method="POST" class="my-2">
+                <div class="mb-3">
+                  <label for="text" class="form-label">Task Name</label>
+                  <input type="text" class="form-control" name = title value="{{allTodo.title}}" id="text" required>
+                </div>
+                <div class="mb-3">
+                  <label for="text" class="form-label">Description</label>
+                  <textarea class="form-control" name="excerpt" value="{{allTodo.desc}}" style="height: 100px">{{allTodo.excerpt}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+      </div>
+{% endblock %}
