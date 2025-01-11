@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="header text-center" mb-3>Tasks</h1>
+    <table class="table table-success table-striped p-2">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Created AT</th>
+                <th scope="col" colspan="2" >Action</th>
+               
+              </tr>
+        </thead>
+        <tr>
+        {% for t in todo %}
+        <th scope="row">{{loop.index}}</th>
+        <td class= "card-title"> {{t.task}} </td>
+        <td class= "card-title"> {{t.excerpt}}</td>
+        <td class= "card-title"> {{t.date_created}} </td>
+        <td><a href="edit/{{t.sno}}"><button type="button" class="btn btn-dark btn-sm">edit</button></a></td>
+        <td><a href="delete/{{t.sno}}"><button type="button" class="btn btn-dark btn-sm">delete</button></a></td>
+    </tr>
+        {% endfor %}
+    
+    </table>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center bg-info">Update Your Task</h2>
+<form action="" method="POST" class="my-2">
+    <label for="name">Task Name</label>
+    <input type="text" name="name" id="fname" class="form-control" value = '{{todo.task}}'>
+    <label for="name">Description</label>
+    <textarea name="excerpt" id="desc" class="form-control">{{todo.excerpt}}</textarea>
+    <div class="col-auto my-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+</form>
+{% endblock %}

@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Form : </h1>
-    <form action="{{ url_for('form') }}" method="POST">
-        <label for="first_name">First Name
-            <input type="text" name="first_name" id="name" required>
-        </label>
-        <label for="last_name">Last Name
-            <input type="text" name="last_name" id="name">
-        </label>
-        <label for="email">E-mail
-            <input type="email" name="email" id="email">
-        </label>
-
-        <button type="submit" value="submit">Submit</button>
+{% extends "base.html" %}
+{% block content %}
+    
+    <h2 class="text-center bg-info">Add Your Task</h2>
+    <form action="" method="POST" class="my-2">
+        <label for="name">Task Name</label>
+        <input type="text" name="name" id="fname" class="form-control">
+        <label for="name">Description</label>
+        <textarea name="excerpt" id="desc" class="form-control"></textarea>
+        <div class="col-auto my-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
     </form>
-    <hr>
-    <h2>
-        Full Name : {{Name}}
-    </h2>
-</body>
-</html>
+
+    {% endblock %}
